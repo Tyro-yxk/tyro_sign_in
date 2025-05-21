@@ -1,0 +1,26 @@
+jobs:
+  get_cac_apex:
+    runs-on: ubuntu-latest
+    name: run tieba
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: get
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.x'
+          architecture: 'x64'
+      - run: pip install -r ./requirements.txt && python ./tieba.py
+
+    env:
+      TIEBACK: ${{secrets.TIEBACK}}
+
+name: tieba
+on:
+  schedule:
+  - cron:  '20 3 * * *'
+  workflow_dispatch:
+
+
