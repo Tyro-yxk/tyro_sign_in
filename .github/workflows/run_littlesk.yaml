@@ -1,7 +1,6 @@
 jobs:
-  littlesk_auto:
+  littlesk:
     runs-on: ubuntu-latest
-    name: littlesk
     steps:
       - name: checkout
         uses: actions/checkout@v3

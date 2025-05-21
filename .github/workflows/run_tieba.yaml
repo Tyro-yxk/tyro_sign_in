@@ -1,13 +1,12 @@
 jobs:
-  get_cac_apex:
+  tieba:
     runs-on: ubuntu-latest
-    name: run tieba
     steps:
       - name: checkout
         uses: actions/checkout@v3
         with:
           ref: main
-      - name: get
+      - name: tieba
         uses: actions/setup-python@v2
         with:
           python-version: '3.10.x'
@@ -17,7 +16,7 @@ jobs:
     env:
       TIEBACK: ${{secrets.TIEBACK}}
 
-name: tieba
+name: run tieba
 on:
   schedule:
   - cron:  '20 3 * * *'

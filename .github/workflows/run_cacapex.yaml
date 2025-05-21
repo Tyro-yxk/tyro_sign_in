@@ -1,7 +1,6 @@
 jobs:
-  get_cac_apex:
+  cacapex:
     runs-on: ubuntu-latest
-    name: run cacapex
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -17,7 +16,7 @@ jobs:
     env:
       USER_CACAPEX: ${{secrets.USER_CACAPEX}}
 
-name: cacapex
+name: run cacapex
 on:
   schedule:
   - cron:  '0 0 10 * ?'
