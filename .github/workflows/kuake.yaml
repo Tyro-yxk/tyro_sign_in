@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '30 0 * * *'
+    - cron: '30 1 * * *'
   workflow_dispatch:
 
 name: run yundong
