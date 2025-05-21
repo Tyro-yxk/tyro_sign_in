@@ -1,22 +1,22 @@
 on:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '30 0 * * *'
   workflow_dispatch:
 
 name: run yundong
 jobs:
-  yundong:
+  kuake:
     runs-on: ubuntu-latest
     steps:
       - name: check
         uses: actions/checkout@v3
         with:
           ref: main
-      - name: xiaomiyundong
+      - name: kuake
         uses: actions/setup-python@v2
         with:
           python-version: "3.10.x"
           architecture: "x64"
-      - run: pip install -r ./requirements.txt && python ./xiaomiyundong.py
+      - run: pip install -r ./requirements.txt && python ./kuake.py
     env:
-      MISPORT: ${{secrets.MISPORT}}
+      COOKIE_QUARK: ${{secrets.COOKIE_QUARK}}
