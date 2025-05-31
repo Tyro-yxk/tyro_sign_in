@@ -14,6 +14,8 @@ jobs:
       - run: pip install -r ./requirements.txt && python ./littlesk.py
     env:
       USER_LITTLESK: ${{secrets.USER_LITTLESK}}
+      PUSH_KEY: ${{secrets.PUSH_KEY}}
+      PUSH_URL: ${{secrets.PUSH_URL}}
 name: run littlesk
 on:
   workflow_dispatch:

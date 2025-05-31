@@ -20,3 +20,5 @@ jobs:
       - run: pip install -r ./requirements.txt && python ./xiaomiyundong.py
     env:
       MISPORT: ${{secrets.MISPORT}}
+      PUSH_KEY: ${{secrets.PUSH_KEY}}
+      PUSH_URL: ${{secrets.PUSH_URL}}

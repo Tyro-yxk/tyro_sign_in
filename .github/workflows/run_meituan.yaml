@@ -20,3 +20,5 @@ jobs:
       - run: pip install -r ./requirements.txt && python ./mtV4.py
     env:
       MEITUAN_COOKIE: ${{secrets.MEITUAN_COOKIE}}
+      PUSH_KEY: ${{secrets.PUSH_KEY}}
+      PUSH_URL: ${{secrets.PUSH_URL}}

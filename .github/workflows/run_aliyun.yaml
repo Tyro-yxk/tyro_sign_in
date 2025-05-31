@@ -20,3 +20,5 @@ jobs:
       - run: pip install -r ./requirements.txt && python ./aliyun.py
     env:
       ALI_REFRESH_TOKEN: ${{secrets.ALI_REFRESH_TOKEN}}
+      PUSH_KEY: ${{secrets.PUSH_KEY}}
+      PUSH_URL: ${{secrets.PUSH_URL}}
