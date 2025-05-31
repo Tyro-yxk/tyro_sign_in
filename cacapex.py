@@ -5,6 +5,8 @@ import re
 import requests
 from requests import Timeout
 
+from notify import notify
+
 
 # 联通性测试
 def connectivity_test(timeout=10):
@@ -176,4 +178,5 @@ for error in error_list:
     if error_list[error]:
         error_index += 1
         print(f"{error}：{error_list[error]}")
+        notify.send_email('cacapex签到', f"{error}：{error_list[error]}")
 exit(error_index)

@@ -9,6 +9,8 @@ import json
 import requests
 import os
 
+from notify import notify
+
 ##变量export ali_refresh_token=''
 ali_refresh_token = os.getenv("ALI_REFRESH_TOKEN").split('&')
 # refresh_token是一成不变的呢，我们使用它来更新签到需要的access_token
@@ -46,15 +48,15 @@ for i in range(len(ali_refresh_token)):
                     if not day_json['isReward']:
                         contents = '签到成功，今日未获得奖励'
                     else:
-                        contents = '本月累计签到{}天,今日签到获得{}{}'.format(result['result']['signInCount'],
-                                                                              day_json['reward']['name'],
-                                                                              day_json['reward']['description'])
+                        contents = '本月累计签到{}天,今日签到获得{}{}'.format(
+                            result['result']['signInCount'],
+                            day_json['reward']['name'],
+                            day_json['reward']['description'])
                     print(contents)
 
                     return contents
 
 
-    # 使用refresh_token更新access_token
     def update_token(refresh_token):
         url = 'https://auth.aliyundrive.com/v2/account/token'
         data = {
@@ -70,9 +72,10 @@ for i in range(len(ali_refresh_token)):
     def mian():
         #         print('更新access_token')
         access_token = update_token(ali_refresh_token)
+        notify.send_email('阿里云盘签到', "更新access_token: " + access_token)
         #         print('更新成功，开始进行签到')
         content = daily_check(access_token)
-        print(content)
+        notify.send_email('阿里云盘签到', content)
 
 
     if __name__ == '__main__':

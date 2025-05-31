@@ -12,6 +12,8 @@ import sys
 
 import requests
 
+from notify import notify
+
 
 # import notify
 
@@ -44,7 +46,7 @@ def sign_in(email, passwd):
             #         print(ss)
             if 'msg' in ss:
                 print(ss['msg'])
-                # notify.send("IKuuu机场签到", ss['msg'])
+                notify.send("IKuuu机场签到", ss['msg'])
                 break
     except:
         print('请检查帐号配置是否错误')

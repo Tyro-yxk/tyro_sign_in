@@ -5,6 +5,8 @@ import re
 import requests
 from requests.cookies import RequestsCookieJar
 
+from notify import notify
+
 # Configuration
 BASE_URL = 'https://littleskin.cn/'
 MAX_RETRY = 3
@@ -107,6 +109,7 @@ def run_task():
     result = perform_sign(session, headers)
     print(result)
     if result['code'] != 0:
+        notify.send("签到失败", result['message'])
         raise Exception(result['message'])
 
 

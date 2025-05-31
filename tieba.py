@@ -15,6 +15,8 @@ import re
 
 import requests
 
+from notify.notify import send
+
 
 class Tieba:
     def __init__(self, check_items):
@@ -125,6 +127,7 @@ def start():
         item = s[i]
         _check_items = [string_to_dict(item)]
         result = Tieba(check_items=_check_items).main()
+        send('贴吧签到', result)
         print(result)
 
 
