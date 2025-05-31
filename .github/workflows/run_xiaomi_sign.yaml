@@ -5,7 +5,7 @@ on:
 
 name: run sign
 jobs:
-  yundong:
+  xiaomisign:
     runs-on: ubuntu-latest
     steps:
       - name: check
