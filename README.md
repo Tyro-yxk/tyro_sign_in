@@ -1,4 +1,5 @@
 # tyro的自动签到python脚本
+
 ## 阿里云盘签到
 
 环境变量名: ***ALI_REFRESH_TOKEN*** , 账号分割符号 ***&*** ,格式: ***string***
@@ -39,8 +40,8 @@ phone#password
 
 ```json
 {
-    "handle":"账号",
-    "password":"密码"
+  "handle": "账号",
+  "password": "密码"
 }
 ```
 
@@ -66,3 +67,10 @@ phone#password
 phone-password-1000-2000
 ```
 
+## 小米社区微信小程序签到
+
+环境变量名: ***XIAOMI_COOKIE***
+> 原创
+```
+serviceToken=xxxxxxxxxxxxxxxxxxxx; miui_vip_ph=xxxxxxxx; userId=1111111111111111
+```

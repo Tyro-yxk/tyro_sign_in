@@ -1,0 +1,24 @@
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+name: run sign
+jobs:
+  yundong:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: xiaomiqiandao
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10.x"
+          architecture: "x64"
+      - run: pip install -r ./requirements.txt && python ./xiaomi_sign.py
+    env:
+      XIAOMI_COOKIE: ${{secrets.XIAOMI_COOKIE}}
+      PUSH_KEY: ${{secrets.PUSH_KEY}}
+      PUSH_URL: ${{secrets.PUSH_URL}}

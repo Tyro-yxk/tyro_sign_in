@@ -26,7 +26,7 @@ def send(title='title', content='content', type='text'):
         "title": title,
         "content": content,
         "type": type,
-    })
+    },verify=False)
     print(re.text)
     return re
 
