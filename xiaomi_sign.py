@@ -54,7 +54,7 @@ def set_header(_cookie):
 def get_growth_value(_cookie, _header):
     url = f'https://api.vip.miui.com/mtop/planet/vip/member/addCommunityGrowUpPointByActionV2?miui_vip_ph={quote(_cookie["miui_vip_ph"])}'
 
-    response = requests.get(url, headers=_header, verify=False)
+    response = requests.get(url, headers=_header)
     return response
 
 
