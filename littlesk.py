@@ -108,6 +108,7 @@ def run_task():
 
     result = perform_sign(session, headers)
     print(result)
+    notify.send("签到成功", f"签到成功，获得{result['message']} 积分")
     if result['code'] != 0:
         notify.send("签到失败", result['message'])
         raise Exception(result['message'])

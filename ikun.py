@@ -50,7 +50,7 @@ def sign_in(email, passwd):
                 break
     except:
         print('请检查帐号配置是否错误')
-        # notify.send("IKuuu机场签到", '请检查帐号配置是否错误')
+        notify.send("IKuuu机场签到", '请检查帐号配置是否错误')
 
 
 def ql_env():

@@ -75,7 +75,7 @@ for i in range(len(ali_refresh_token)):
         notify.send_email('阿里云盘签到', "更新access_token: " + access_token)
         #         print('更新成功，开始进行签到')
         content = daily_check(access_token)
-        notify.send_email('阿里云盘签到', content)
+        notify.send('阿里云盘签到', content)
 
 
     if __name__ == '__main__':

@@ -14,6 +14,8 @@ import re
 import sys
 import requests
 
+from notify import notify
+
 
 # 推送函数
 # 推送加
@@ -124,6 +126,7 @@ def main():
         i += 1
 
     print(msg)
+    notify.send("夸克网盘签到", msg)
 
     return msg[:-1]
 

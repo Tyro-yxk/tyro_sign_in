@@ -178,5 +178,5 @@ for error in error_list:
     if error_list[error]:
         error_index += 1
         print(f"{error}：{error_list[error]}")
-        notify.send_email('cacapex签到', f"{error}：{error_list[error]}")
+        notify.send('cacapex签到', f"{error}：{error_list[error]}")
 exit(error_index)
