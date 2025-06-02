@@ -16,7 +16,7 @@ import time
 import os
 import requests
 
-from notify.notify import send
+from notify import notify
 
 
 class MiMotion:
@@ -158,7 +158,7 @@ def start():
         _check_items = [string_to_dict(item)]
         result = MiMotion(check_items=_check_items).main()
         print(result)
-        send('小米运行步数', result)
+        notify.send('小米运行步数', result)
         print('*' * 15)
 
 

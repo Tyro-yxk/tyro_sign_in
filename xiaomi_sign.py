@@ -6,7 +6,7 @@ from urllib.parse import quote
 
 import requests
 
-from notify.notify import send
+from notify import notify
 
 
 def get_cookie():
@@ -63,4 +63,4 @@ if __name__ == '__main__':
     res = get_growth_value(_cookie, set_header(_cookie['cookie']))
     print(res.text)
 
-    send("小米会员", res.text)
+    notify.send("小米会员", res.text)

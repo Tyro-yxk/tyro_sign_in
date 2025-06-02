@@ -18,7 +18,7 @@ import re
 import os
 import time
 
-from notify.notify import send
+from notify import notify
 
 # 分割变量
 if 'MEITUAN_COOKIE' in os.environ:
@@ -51,7 +51,7 @@ def waim(ck):
     print(f"获得{len(b['data']['allCoupons'])}张优惠券")
     for sj in b['data']['allCoupons']:
         print(f"{sj['couponName']}-{sj['amountLimit']}-{sj['couponAmount']}元-{sj['amountLimit']}-{sj['etime']}")
-    send('美团领券', b['data']['allCoupons'])
+    notify.send('美团领外卖券', f"获得{len(b['data']['allCoupons'])}张优惠券")
 
 
 # 团购
@@ -76,7 +76,7 @@ def tuangou(ck):
     print(f"获得{len(b['data']['allCoupons'])}张优惠券")
     for sj in b['data']['allCoupons']:
         print(f"{sj['couponName']}-{sj['amountLimit']}-{sj['couponAmount']}元-{sj['amountLimit']}-{sj['etime']}")
-    send('美团领券', b['data']['allCoupons'])
+    notify.send('美团领团购券', f"获得{len(b['data']['allCoupons'])}张优惠券")
 
 
 def main():
