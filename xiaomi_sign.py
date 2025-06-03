@@ -19,11 +19,7 @@ def get_cookie():
         _result['cookie'] = _cookie
         matches = re.findall(pattern, _cookie)
         for key, value in matches:
-            if key == 'miui_vip_ph':
-                _result[key] = value
-            if key == 'userId':
-                _result[key] = value
-            if key == 'serviceToken':
+            if key == 'miui_vip_ph' or key == 'userId' or key == 'serviceToken':
                 _result[key] = value
         return _result
     else:
