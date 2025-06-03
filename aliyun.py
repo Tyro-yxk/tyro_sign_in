@@ -72,7 +72,6 @@ for i in range(len(ali_refresh_token)):
     def mian():
         #         print('更新access_token')
         access_token = update_token(ali_refresh_token)
-        notify.send('阿里云盘签到', "更新access_token: " + access_token)
         #         print('更新成功，开始进行签到')
         content = daily_check(access_token)
         notify.send('阿里云盘签到', content)
