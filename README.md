@@ -67,9 +67,10 @@ phone#password
 phone-password-1000-2000
 ```
 
-## 小米社区微信小程序签到
+## ~~小米社区微信小程序签到~~
+电脑微信抓包的token好像登录就变一次，放弃
 
-环境变量名: ***XIAOMI_COOKIE***
+~~环境变量名: ***XIAOMI_COOKIE***~~
 > 原创
 ```
 serviceToken=xxxxxxxxxxxxxxxxxxxx; miui_vip_ph=xxxxxxxx; userId=1111111111111111
