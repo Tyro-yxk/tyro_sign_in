@@ -156,10 +156,23 @@ def start():
     for i in range(len(s)):
         item = s[i]
         _check_items = [string_to_dict(item)]
-        result = MiMotion(check_items=_check_items).main()
-        print(result)
-        notify.send('小米运行步数', result)
-        print('*' * 15)
+
+        def run():
+            try:
+                result = MiMotion(check_items=_check_items).main()
+                print(result)
+                notify.send('小米运行步数', result)
+                print('*' * 15)
+                return True
+            except Exception as e:
+                print(e)
+                return False
+
+        for j in range(3):
+            time.sleep(1)
+            error = run()
+            if error:
+                break
 
 
 if __name__ == "__main__":
