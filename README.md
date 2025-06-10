@@ -6,7 +6,7 @@
 
 > 非原创
 
-## CACAPEX鸡场
+## ~~CACAPEX鸡场~~
 
 环境变量名: ***USER_CACAPEX*** , 账号分割符号: ***;*** , 账号密码分割符号: ***,*** ,格式***string***
 
@@ -15,6 +15,7 @@
 ```
 email,password
 ```
+cacapex免费套餐取消
 
 ## ikun鸡场
 
