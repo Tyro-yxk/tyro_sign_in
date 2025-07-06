@@ -127,7 +127,7 @@ def start():
         item = s[i]
         _check_items = [string_to_dict(item)]
         result = Tieba(check_items=_check_items).main()
-        notify.send('贴吧签到', result)
+        notify.send_info('贴吧签到', result)
         print(result)
 
 

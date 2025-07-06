@@ -31,5 +31,24 @@ def send(title='title', content='content', type='text'):
     return re
 
 
+def send_info(title, content, type='text'):
+    send("[i]" + title, content, type)
+
+
+def send_success(title, content, type='text'):
+    send("[s]" + title, content, type)
+
+
+def send_warning(title, content, type='text'):
+    send("[w]" + title, content, type)
+
+
+def send_failure(title, content, type='text'):
+    send("[f]" + title, content, type)
+
+
 if __name__ == '__main__':
-    send('title', 'content', 'text')
+    send_info('title', 'content', 'text')
+    send_success('title', 'content', 'text')
+    send_warning('title', 'content', 'text')
+    send_failure('title', 'content', 'text')

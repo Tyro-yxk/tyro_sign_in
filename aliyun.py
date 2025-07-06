@@ -64,6 +64,9 @@ for i in range(len(ali_refresh_token)):
             'refresh_token': ali_refresh_token[i]
         }
         response = requests.post(url=url, json=data).json()
+        if response['code'] == 'InvalidParameter.RefreshToken':
+            notify.send_failure('阿里云盘签到', 'refresh_token已过期')
+            return
         access_token = response['access_token']
         #         print('获取的access_token为{}'.format(access_token))
         return access_token
@@ -72,9 +75,10 @@ for i in range(len(ali_refresh_token)):
     def mian():
         #         print('更新access_token')
         access_token = update_token(ali_refresh_token)
-        #         print('更新成功，开始进行签到')
+        if access_token is None:
+            return
         content = daily_check(access_token)
-        notify.send('阿里云盘签到', content)
+        notify.send_success('阿里云盘签到', content)
 
 
     if __name__ == '__main__':

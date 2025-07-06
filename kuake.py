@@ -126,7 +126,7 @@ def main():
         i += 1
 
     print(msg)
-    notify.send("夸克网盘签到", msg)
+    notify.send_info("夸克网盘签到", msg)
 
     return msg[:-1]
 

@@ -161,7 +161,7 @@ def start():
             try:
                 result = MiMotion(check_items=_check_items).main()
                 print(result)
-                notify.send('小米运行步数', result)
+                notify.send_info('小米运行步数', result)
                 print('*' * 15)
                 return True
             except Exception as e:

@@ -46,11 +46,11 @@ def sign_in(email, passwd):
             #         print(ss)
             if 'msg' in ss:
                 print(ss['msg'])
-                notify.send("IKuuu机场签到", ss['msg'])
+                notify.send_success("IKuuu机场签到", ss['msg'])
                 break
     except:
         print('请检查帐号配置是否错误')
-        notify.send("IKuuu机场签到", '请检查帐号配置是否错误')
+        notify.send_failure("IKuuu机场签到", '请检查帐号配置是否错误')
 
 
 def ql_env():

@@ -45,4 +45,4 @@ if __name__ == '__main__':
     res = get_growth_value(_cookie, set_header(_cookie['cookie']))
     print(res.text)
 
-    notify.send("小米社区小程序签到", res.text)
+    notify.send_info("小米社区小程序签到", res.text)
