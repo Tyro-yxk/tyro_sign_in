@@ -64,9 +64,9 @@ for i in range(len(ali_refresh_token)):
             'refresh_token': ali_refresh_token[i]
         }
         response = requests.post(url=url, json=data).json()
-        if response['code'] == 'InvalidParameter.RefreshToken':
+        if 'code' in response and response['code'] == 'InvalidParameter.RefreshToken':
             notify.send_failure('阿里云盘签到', 'refresh_token已过期')
-            return
+            return None
         access_token = response['access_token']
         #         print('获取的access_token为{}'.format(access_token))
         return access_token
