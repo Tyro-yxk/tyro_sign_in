@@ -27,7 +27,9 @@ for i in range(len(ali_refresh_token)):
         url = 'https://member.aliyundrive.com/v1/activity/sign_in_list'
         headers = {
             'Authorization': access_token,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'application/json'
         }
         response = requests.post(url=url, headers=headers, json={}).text
         result = json.loads(response)
